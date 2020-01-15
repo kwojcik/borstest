@@ -1,0 +1,20 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: debian:stretch
+
+    steps:
+      - checkout
+
+      - run:
+          name: Greeting
+          command: echo Hello, world.
+
+      - run:
+          name: Print the Current Time
+          command: date
+
+      - test:
+          name: Check that there is 1 line containing the word dog in foo.txt
+          command: grep dog foo.txt | wc -l | grep 1
