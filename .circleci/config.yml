@@ -16,5 +16,5 @@ jobs:
           command: date
 
       - run:
-          name: Check that there is 2 line containing the word dog in foo.txt
-          command: grep dog foo.txt | wc -l | grep 2
+          name: Check that there is 2 line containing the word dog in *.txt
+          command: grep dog *.txt | wc -l | grep 2
